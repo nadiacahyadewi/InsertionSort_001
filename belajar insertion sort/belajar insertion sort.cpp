@@ -29,3 +29,31 @@ void input() {				// Procedure Input
 		cin >> arr[i];									// Menyimpan nilai data n kedalam array arr
 	}
 }
+
+void insertionsort() {				// Procedure Insertionsort 
+
+	int temp;						// Membuat variabel data temporer atau penyimpanan sementara
+	int j;							// Membuat variabel j sebagai penanda
+
+	for (int i = 1; i < n; i++) {		// Looping dengan i dimulai dari 1 hingga n-1
+
+		temp = arr[i];					// simpan nilai arr[i] ke variabel sementara temp
+ 
+		j = i - 1;						// setting nilai j sama dengan i-1;
+
+		while (j >= 0 && arr[j] > temp)		// Looping while dimana nilai j lebih besar sama dengan 0 dan
+											// arr [j] lebih besar daripada temp
+ 		{
+			arr[j + 1] = arr[j];		// simpan arr [j] ke dalam variabel arr[j+1]
+			j--;						// Decrement nilai j by 1
+		}
+
+		arr[j + 1] = temp;			// simpan nilai temp ke dalam arr[j+1]
+
+		cout << "\nStop " << i << ": ";		// Output ke layar
+		for (int k = 0; k < n; k++) {		// Looping nilai k dimulai dari 0 hingga n-1
+			cout << arr[k] << " ";			// Output ke layar 
+		}
+
+	}
+}
